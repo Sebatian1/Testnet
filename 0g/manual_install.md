@@ -49,7 +49,7 @@ sudo systemctl enable og
 0gchaind init $MONIKER --chain-id zgtendermint_16600-1
 0gchaind config chain-id zgtendermint_16600-1
 0gchaind config keyring-backend test
-0gchaind config node tcp://localhost:10157
+0gchaind config node tcp://localhost:12057
 ```
 ## Download Genesis & Addrbook
 ```
@@ -70,8 +70,8 @@ sed -i "s/^indexer *=.*/indexer = \"null\"/" $HOME/.0gchain/config/config.toml
 ```
 ## Custom Port
 ```
-sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:10158\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:10157\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:10160\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:10156\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":10166\"%" $HOME/.0gchain/config/config.toml
-sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:10117\"%; s%^address = \":8080\"%address = \":10180\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:10190\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:10191\"%; s%:8545%:10145%; s%:8546%:10146%; s%:6065%:10165%" $HOME/.0gchain/config/app.toml
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:12058\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:12057\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:12060\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:12056\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":12066\"%" $HOME/.0gchain/config/config.toml
+sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:12017\"%; s%^address = \":8080\"%address = \":12080\"%; s%^address = \"0.0.0.0:9090\"%address = \"0.0.0.0:12090\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:12091\"%; s%:8545%:12045%; s%:8546%:12046%; s%:6065%:12065%" $HOME/.0gchain/config/app.toml
 ```
 
 ## Start Node
