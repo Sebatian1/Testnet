@@ -4,7 +4,7 @@
 0gchaind keys add wallet
 ```
 ```
-0gchaind keys add wallet1 --eth
+0gchaind keys add wallet --eth
 ```
 ### Recover key
   ```
