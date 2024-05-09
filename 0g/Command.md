@@ -48,15 +48,15 @@
 ### Edit validator
 ```
 0gchaind tx staking edit-validator \
---new-moniker "NewName-VNBnode" \
---identity "06F5F34BD54AA6C7" \
---website "https://vnbnode.com" \
---details "VNBnode is a group of professional validators / researchers in blockchain" \
+--new-moniker "NewMonkiker" \
+--identity "xxx" \
+--website "xxx" \
+--details "xxx" \
 --security-contact "" \
 --commission-rate 0.05 \
 --from wallet \
 --gas-adjustment 1.4 \
--chain-id zgtendermint_9000-1 \
+-chain-id zgtendermint_16600-1 \
 --gas=auto --gas-prices=0.00252ua0gi \
 -y
 ```
