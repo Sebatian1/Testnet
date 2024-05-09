@@ -10,6 +10,7 @@
 **Explorer:** https://explorer.sebatian.org/0g/
 
 **Snapshot:** https://github.com/Sebatian1/Cosmos/blob/main/0g/snapshot.md
+
 **Form 0G:** https://docs.google.com/forms/d/e/1FAIpQLScsa1lpn43F7XAydVlKK_ItLGOkuz2fBmQaZjecDn76kysQsw/viewform
 
 # Manual node setup
