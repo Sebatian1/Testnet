@@ -79,15 +79,3 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:12017\"
 sudo systemctl start og
 sudo journalctl -u og -f --no-hostname -o cat
 ```
-## Remove Node
-```
-cd $HOME
-sudo systemctl stop og
-sudo systemctl disable og
-sudo rm /etc/systemd/system/g.service
-sudo systemctl daemon-reload
-sudo rm $HOME/go/bin/0gchaind
-sudo rm -f $(which 0gchaind)
-sudo rm -rf $HOME/0g-chain
-sudo rm -rf $HOME/.0gchain
-```
