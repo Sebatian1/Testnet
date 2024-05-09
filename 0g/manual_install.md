@@ -1,6 +1,7 @@
 |      Chain ID       |  Port  |  Version  |
 |---------------------|--------|-----------|
 |zgtendermint_16600-1 |  120   |   v0.1.0   |
+
 **API:** https://api-0g.sebatian.org/
 **RPC:** https://rpc-0g.sebatian.org/
 **Explorer:** https://explorer.sebatian.org/0g/
