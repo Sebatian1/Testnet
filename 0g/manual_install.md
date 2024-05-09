@@ -9,6 +9,8 @@
 
 **Explorer:** https://explorer.sebatian.org/0g/
 
+**Snapshot:** https://github.com/Sebatian1/Cosmos/blob/main/0g/snapshot.md
+
 # Manual node setup
 Here you have to put name of your moniker (validator) that will be visible in explorer
 ```
