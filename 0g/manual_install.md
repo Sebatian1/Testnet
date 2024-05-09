@@ -4,7 +4,7 @@
 
 # Manual node setup
 Here you have to put name of your moniker (validator) that will be visible in explorer
-NODENAME="Your Moniker"
+MONIKER="Your Moniker"
 ## Update and install packages for compiling
 ```
 cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
@@ -46,11 +46,8 @@ sudo systemctl enable og
 ```
 ## Initialize Node
 ```
-echo 'export CHAIN_ID="zgtendermint_16600-1"' >> ~/.bash_profile
-echo 'export WALLET_NAME="wallet"' >> ~/.bash_profile
-source $HOME/.bash_profile
-0gchaind init $MONIKER --chain-id $CHAIN_ID
-0gchaind config chain-id $CHAIN_ID
+0gchaind init $MONIKER --chain-id zgtendermint_16600-1
+0gchaind config chain-id zgtendermint_16600-1
 0gchaind config keyring-backend test
 0gchaind config node tcp://localhost:10157
 ```
