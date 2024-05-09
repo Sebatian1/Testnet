@@ -1,13 +1,22 @@
 |      Chain ID       |  Port  |  Version  |
 |---------------------|--------|-----------|
-|zgtendermint_16600-1 |  120   |   v0.10   |
+|zgtendermint_16600-1 |  120   |   v0.1.0   |
 
 # Manual node setup
 Here you have to put name of your moniker (validator) that will be visible in explorer
 MONIKER="Your Moniker"
 ## Update and install packages for compiling
 ```
-cd $HOME && source <(curl -s https://raw.githubusercontent.com/vnbnode/binaries/main/update-binary.sh)
+sudo apt -q update
+sudo apt -qy install curl git jq lz4 build-essential
+sudo apt -qy upgrade
+```
+### Install go
+```
+sudo rm -rf /usr/local/go
+curl -Ls https://go.dev/dl/go1.21.10.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
+eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
 ## Build binary
 ```
