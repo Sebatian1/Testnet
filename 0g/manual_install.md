@@ -4,7 +4,9 @@
 
 # Manual node setup
 Here you have to put name of your moniker (validator) that will be visible in explorer
+```
 MONIKER="Your Moniker"
+```
 ## Update and install packages for compiling
 ```
 sudo apt -q update
