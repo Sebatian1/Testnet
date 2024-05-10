@@ -43,7 +43,6 @@
   --min-self-delegation="1" \
   --from=<key_name> \
   --gas-adjustment=1.4 \
-  --gas-prices 0.00252ua0gi
 ```
 ### Edit validator
 ```
@@ -57,12 +56,12 @@
 --from wallet \
 --gas-adjustment 1.4 \
 -chain-id zgtendermint_16600-1 \
---gas=auto --gas-prices=0.00252ua0gi \
+--gas=auto \
 -y
 ```
 ### Unjail
 ```
-0gchaind tx slashing unjail --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx slashing unjail --from wallet -y
 ```
 ### View validator details
 ```
@@ -85,23 +84,23 @@
 # Managing Tokens
 ### Delegate tokens to your validator
 ```
-0gchaind tx staking delegate $(0gchaind keys show wallet --bech val -a)  1000000ua0gi --from wallet --gas=auto --gas-prices=0.00252ua0gi -y
+0gchaind tx staking delegate $(0gchaind keys show wallet --bech val -a)  1000000ua0gi --from wallet --gas=auto -y
 ```
 ### Send token
 ```
-0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi --gas-prices=0.00252ua0gi -y
+0gchaind tx bank send <WALLET> <TO_WALLET> <AMOUNT>ua0gi -y
 ```
 ### Withdraw reward from all validator
 ```
-0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx distribution withdraw-all-rewards --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 ### Withdraw reward and commission
 ```
-0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx distribution withdraw-rewards $(0gchaind keys show wallet --bech val -a) --commission --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 ### Redelegate to another validator
 ```
-0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_9000-1 --gas-adjustment 1.4 --gas auto --gas-prices=0.00252ua0gi -y
+0gchaind tx staking redelegate $(0gchaind keys show wallet --bech val -a) <to-valoper-address> 1000000stake --from wallet --chain-id zgtendermint_16600-1 --gas-adjustment 1.4 --gas auto -y
 ```
 # Governance
 ### Query list proposal
@@ -114,19 +113,19 @@
 ```
 ### Vote yes
 ```
-0gchaind tx gov vote 1 yes --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 yes --from wallet -y
 ```
 ### Vote No
 ```
-0gchaind tx gov vote 1 no --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 no --from wallet -y
 ```
 ### Vote option asbtain
 ```
-0gchaind tx gov vote 1 abstain --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 abstain --from wallet -y
 ```
 ### Vote option NoWithVeto
 ```
-0gchaind tx gov vote 1 NoWithVeto --from wallet --gas-prices=0.00252ua0gi -y
+0gchaind tx gov vote 1 NoWithVeto --from wallet -y
 ```
 # Maintenance
 ### Check sync
@@ -147,7 +146,7 @@ echo $(0gchaind tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/
 ```
 ### Get peers live
 ```
-curl -sS http://localhost:${og}57/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
+curl -sS http://localhost:12057/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}'
 ```
 ### Remove Node
 ```
