@@ -7,7 +7,7 @@
 
 **RPC:** https://rpc-airchain.sebatian.org/
 
-**Explorer:** https://explorer.sebatian.org/airchain/
+**Explorer:** https://explorer.sebatian.org/airchains/
 
 # Manual node setup
 Here you have to put name of your moniker (validator) that will be visible in explorer
