@@ -7,6 +7,8 @@
 
 **RPC:** https://rpc-airchain.sebatian.org/
 
+**GRPC:** https://grpc-airchain.sebatian.org/
+
 **Explorer:** https://explorer.sebatian.org/airchains/
 
 # Manual node setup
