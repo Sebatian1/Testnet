@@ -1,13 +1,14 @@
-## Snapshot (Updates daily)
+## Snapshot
 _Stop Node and Reset Date_
 ```
 sudo systemctl stop junction
 cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
 rm -rf $HOME/.junction/data && mkdir -p $HOME/.junction/data
 ```
-_Download Snapshot_ (auto daily update)
+_Download Snapshot_ (update daily)
 ```
-curl -L https://snapshot-airchain.sebatian.org/junction_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.junction/data
+curl -L https://snapshot-airchains.johnvnb.com/junction_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.junction/data
+curl -L https://snapshot-airchains.johnvnb.com/junction_snapshot_latest.tar.lz4 | tar -I lz4 -xf - -C $HOME/.junction/data
 ```
 ```
 mv $HOME/.junction/priv_validator_state.json.backup $HOME/.junction/data/priv_validator_state.json
