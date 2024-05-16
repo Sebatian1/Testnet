@@ -3,7 +3,7 @@ Make sure backup your priv_validator_state.json before reset
 ```
 sudo systemctl stop junction
 cp $HOME/.junction/data/priv_validator_state.json $HOME/.junction/priv_validator_state.json.backup
-junctiond tendermint unsafe-resdet-all --keep-addr-book --home $HOME/.junction
+junctiond tendermint unsafe-reset-all --keep-addr-book --home $HOME/.junction
 ```
 ### Configure State Sync
 ```
