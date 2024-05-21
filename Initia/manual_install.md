@@ -140,7 +140,7 @@ sudo systemctl enable slinky.service
 ## Validating Prices
 ### make run-oracle-client
 ```
-~/.initia/app.toml
+nano ~/.initia/config/app.toml
 ```
 ```
 ###############################################################################
