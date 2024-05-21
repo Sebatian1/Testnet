@@ -126,7 +126,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which slinky) --oracle-config-path $HOME/slinky/config/core/oracle.json --market-map-endpoint 127.0.0.1:17990
+ExecStart=$(which slinky) --oracle-config-path $HOME/slinky/config/core/oracle.json --market-map-endpoint 127.0.0.1:11990
 Restart=on-failure
 RestartSec=30
 LimitNOFILE=65535
@@ -134,12 +134,11 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
-```
-```
 sudo systemctl daemon-reload
 sudo systemctl enable slinky.service
+```
 ## Validating Prices
-make run-oracle-client
+### make run-oracle-client
 ```
 ###############################################################################
 ###                                  Oracle                                 ###
@@ -164,6 +163,7 @@ client_timeout = "300ms"
 # the oracle and the app.
 metrics_enabled = "false"
 ```
+### run-oracle
 sudo systemctl start slinky.service
 journalctl -fu slinky --no-hostname
 ```
