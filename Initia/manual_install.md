@@ -164,6 +164,7 @@ client_timeout = "300ms"
 metrics_enabled = "false"
 ```
 ### run-oracle
+```
 sudo systemctl start slinky.service
 journalctl -fu slinky --no-hostname
 ```
