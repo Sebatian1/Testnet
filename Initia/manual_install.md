@@ -97,7 +97,7 @@ sudo systemctl enable initia
 ```
 ## Start Node
 ```
-sudo systemctl restart junction && journalctl -fu junction -o cat
+sudo systemctl restart initia && journalctl -fu initia -o cat
 ```
 # Set up Oracle
 This guide is only for validator nodes
