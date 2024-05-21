@@ -77,7 +77,7 @@ sed -i 's|^prometheus *=.*|prometheus = true|' $HOME/.initia/config/config.toml
 sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:11958\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:11957\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:11960\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:11956\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":11966\"%" $HOME/.initia/config/config.toml
 sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:11917\"%; s%^address = \":8080\"%address = \":11980\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:11990\"%; s%^address = \"0.0.0.0:9091\"%address = \"0.0.0.0:11991\"%; s%:8545%:11945%; s%:8546%:11946%; s%:6065%:11965%" $HOME/.initia/config/app.toml
 ```
-## Setup 
+## Creat systemd service
 ```
 sudo tee /etc/systemd/system/initia.service > /dev/null << EOF
 [Unit]
@@ -98,4 +98,72 @@ sudo systemctl enable initia
 ## Start Node
 ```
 sudo systemctl restart junction && journalctl -fu junction -o cat
+```
+# Set up Oracle
+This guide is only for validator nodes
+## Clone the Repository and build binaries
+```
+# Clone repository
+cd $HOME
+rm -rf slinky
+git clone https://github.com/skip-mev/slinky.git
+cd slinky
+git checkout v0.4.3
+
+# Build binaries
+make build
+
+# Move binary to local bin
+mv build/slinky /usr/local/bin/
+rm -rf build
+```
+## Creat systemd service
+```
+sudo tee /etc/systemd/system/slinky.service > /dev/null <<EOF
+[Unit]
+Description=Initia Slinky Oracle
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which slinky) --oracle-config-path $HOME/slinky/config/core/oracle.json --market-map-endpoint 127.0.0.1:17990
+Restart=on-failure
+RestartSec=30
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable slinky.service
+## Validating Prices
+make run-oracle-client
+```
+###############################################################################
+###                                  Oracle                                 ###
+###############################################################################
+[oracle]
+# Enabled indicates whether the oracle is enabled.
+enabled = "true"
+
+# Oracle Address is the URL of the out of process oracle sidecar. This is used to
+# connect to the oracle sidecar when the application boots up. Note that the address
+# can be modified at any point, but will only take effect after the application is
+# restarted. This can be the address of an oracle container running on the same
+# machine or a remote machine.
+oracle_address = "127.0.0.1:8080"
+
+# Client Timeout is the time that the client is willing to wait for responses from 
+# the oracle before timing out.
+client_timeout = "300ms"
+
+# MetricsEnabled determines whether oracle metrics are enabled. Specifically
+# this enables instrumentation of the oracle client and the interaction between
+# the oracle and the app.
+metrics_enabled = "false"
+```
+sudo systemctl start slinky.service
+journalctl -fu slinky --no-hostname
 ```
