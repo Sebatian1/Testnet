@@ -1,1 +1,1 @@
-# Cosmos
+# Testnet
