@@ -3,11 +3,11 @@
 |junction |  130   |   v0.1.0   |
 
 
-**API:** https://api-airchain.sebatian.org/
+**API:** https://apitt-airchain.sebatian.org/
 
-**RPC:** https://rpc-airchain.sebatian.org/
+**RPC:** https://rpctt-airchain.sebatian.org/
 
-**GRPC:** https://grpc-airchain.sebatian.org/
+**GRPC:** https://grpctt-airchain.sebatian.org/
 
 **Explorer:** https://explorer.sebatian.org/airchains/
 
