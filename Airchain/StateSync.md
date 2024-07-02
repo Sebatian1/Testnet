@@ -7,7 +7,7 @@ junctiond tendermint unsafe-reset-all --keep-addr-book --home $HOME/.junction
 ```
 ### Configure State Sync
 ```
-SNAP_RPC="https://rpc-airchain.sebatian.org"
+SNAP_RPC="https://rpctt-airchain.sebatian.org"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
