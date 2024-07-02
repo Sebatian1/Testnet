@@ -7,7 +7,7 @@
 
 **RPC:** https://rpctt-airchain.sebatian.org/
 
-**GRPC:** https://grpctt-airchain.sebatian.org/
+**GRPC:** grpctt-airchain.sebatian.org:13090
 
 **Explorer:** https://explorer.sebatian.org/airchains/
 
