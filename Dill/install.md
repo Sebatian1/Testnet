@@ -17,11 +17,7 @@
 | Memory | 2G |
 | Disk | 20G |
 | Network | 1MB/s |
-
-## Recommended OS
-
-- Ubuntu 22.04
-- macOS
+| OS | Ubuntu 22.04 - macOS |
 
 ## Setup Steps
 
