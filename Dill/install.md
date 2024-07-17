@@ -29,40 +29,32 @@
 ```bash
 curl -O https://dill-release.s3.ap-southeast-1.amazonaws.com/linux/dill.tar.gz && tar -xzvf dill.tar.gz && cd dill
 ```
-
 ### 2. Generate Validator Keys
-
 ```bash
 ./dill_validators_gen new-mnemonic --num_validators=1 --chain=andes --folder=./
 ```
 _This will generate validator keys in the `./validator_keys` directory._
 
 ### 3. Import Validator Keys
-
 ```bash
 ./dill-node accounts import --andes --wallet-dir ./keystore --keys-dir validator_keys/ --accept-terms-of-use
 ```
 _During this process, configure and save your keystore password._
 
 ### 4. Save Password to a File
-
+_Replace your-Password_
 ```bash
 echo <your-password> > walletPw.txt
 ```
-
 ### 5. Start Light Validator Node
-
 ```bash
 ./start_light.sh -p walletPw.txt
 ```
-
 ### 6. Verify Node is Running
-
-Run the following command to check if the node is up and running:
+_Run the following command to check if the node is up and running:_
 ```bash
 ps -ef | grep dill
 ```
-
 ## Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
