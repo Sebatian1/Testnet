@@ -52,6 +52,16 @@ _Run the following command to check if the node is up and running:_
 ```bash
 ps -ef | grep dill
 ```
+```bash
+curl -s localhost:3500/eth/v1/beacon/headers | jq
+```
+```bash
+tail -f $HOME/dill/light_node/logs/dill.log
+```
+### 6. Check port
+```bash
+lsof -i:8080 -i:3500 -i:4000 -i:8082 -i:13000 -i:8551 -i:8545 -i:30303
+```
 ## Staking
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
