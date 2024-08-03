@@ -19,6 +19,10 @@
 | Network | 1MB/s |
 | OS | Ubuntu 22.04 - macOS |
 
+## Download and run the auto setup script:
+```
+curl -sO https://raw.githubusercontent.com/Sebatian1/Testnet/main/Dill/dill_node.sh && chmod +x dill_node.sh && ./dill_node.sh
+```
 ## Setup Steps
 
 ### 1. Download and Extract the Light Validator Binary Package
