@@ -24,7 +24,7 @@
 curl -sO https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/dill.sh  && chmod +x dill.sh && ./dill.sh
 ```
 ### 6. Command
-- health check:
+- Health check:
 ```bash
 cd $HOME/dill && ./health_check.sh -v
 ```
