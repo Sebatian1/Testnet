@@ -48,6 +48,7 @@ cd $HOME/dill && ./exit_validator.sh
 
 1. Visit [Dill Staking](https://staking.dill.xyz/)
 2. Upload `deposit_data-*.json` file.
+![image](https://github.com/user-attachments/assets/50125138-b936-46f1-a4e8-31cbfdec6d8a)
 Use `scp` to copy the file locally or:
 ```bash
 cat ./validator_keys/deposit_data-xxxx.json
