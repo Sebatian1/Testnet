@@ -54,4 +54,4 @@ Use `scp` to copy the file locally or:
 cat ./validator_keys/deposit_data-xxxx.json
 ```
 Copy the content to your local machine for uploading.
-This summarized guide should help you set up and run a validator on the Andes Network Dill Testnet. If you need further details or run into issues, refer to the full guide or documentation.
+This summarized guide should help you set up and run a validator on the Alps Network Dill Testnet. If you need further details or run into issues, refer to the full guide or documentation.
