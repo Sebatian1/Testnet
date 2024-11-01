@@ -32,7 +32,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ## Build binary
 ```
 cd $HOME && mkdir -p go/bin/
-wget https://github.com/airchains-network/junction/releases/download/v0.1.0/junctiond
+wget https://github.com/airchains-network/junction/releases/download/v0.2.0/junctiond
 chmod +x junctiond
 mv junctiond $HOME/go/bin/
 ```
