@@ -7,7 +7,7 @@ mkdir -p /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin
 wget $BINARY_URL -O /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 ```
-## Run the Upgrade for Non-cosmosvisor
+## For Non-cosmosvisor
 ### 1. Install tmux (if not installed):
 ```
 sudo apt update && sudo apt install tmux -y
