@@ -1,4 +1,4 @@
-## For Cosmosvisor
+## For Cosmovisor
 ```
 UPGRADE_NAME=v1.1.1
 BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}-ignite/pellcored-${UPGRADE_NAME}-linux-amd64
@@ -7,7 +7,7 @@ mkdir -p /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin
 wget $BINARY_URL -O /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
 ```
-## For Non-cosmosvisor
+## For Non-cosmovisor
 ### 1. Install tmux (if not installed):
 ```
 sudo apt update && sudo apt install tmux -y
