@@ -74,7 +74,7 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:12317\"
 ```
 ## Create service
 ```
-sudo tee /etc/systemd/system/pell.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/pellcored.service > /dev/null <<EOF
 [Unit]
 Description=Pell Node
 After=network-online.target
@@ -93,6 +93,6 @@ EOF
 ## Start Node
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable pell
-sudo systemctl restart pell && journalctl -fu pell -o cat
+sudo systemctl enable pellcored
+sudo systemctl restart pellcored && journalctl -fu pellcored -o cat
 ```
