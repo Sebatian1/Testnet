@@ -21,7 +21,7 @@ replace_binary() {
 }
 
 restart_service() {
-    sudo systemctl restart pell
+    sudo systemctl restart pellcored
 }
 
 while true; do
