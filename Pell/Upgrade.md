@@ -1,4 +1,4 @@
-## Run the Upgrade for Ccosmosvisor
+## For Cosmosvisor
 ```
 UPGRADE_NAME=v1.1.1
 BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}-ignite/pellcored-${UPGRADE_NAME}-linux-amd64
