@@ -1,13 +1,3 @@
-## For Cosmovisor
-```
-UPGRADE_NAME=v1.1.5
-BINARY_URL=https://github.com/0xPellNetwork/network-config/releases/download/${UPGRADE_NAME}/pellcored-${UPGRADE_NAME}-linux-amd64
-
-mkdir -p /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin
-wget $BINARY_URL -O /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
-chmod +x /root/.pellcored/cosmovisor/upgrades/$UPGRADE_NAME/bin/pellcored
-```
-## For Non-cosmovisor
 ```
 sudo systemctl stop pellcored.service
 cd $HOME
