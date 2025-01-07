@@ -27,7 +27,7 @@ source $HOME/.bash_profile
 ## Build binary
 ```
 cd $HOME
-wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.0.20-ignite/pellcored-v1.0.20-linux-amd64
+wget -O pellcored https://github.com/0xPellNetwork/network-config/releases/download/v1.1.5/pellcored-v1.1.5-linux-amd64
 chmod +x $HOME/pellcored
 mv $HOME/pellcored $HOME/go/bin/pellcored
 
@@ -81,7 +81,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=$HOME/.pellcored
-ExecStart=$(which pellcored) start --home $HOME/.pellcored
+ExecStart=$(which pellcored) start --chain-id=ignite_186-1 --home $HOME/.pellcored
 Environment=LD_LIBRARY_PATH=$HOME/.pellcored/lib/
 Restart=on-failure
 RestartSec=5
